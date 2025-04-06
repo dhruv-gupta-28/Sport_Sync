@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Players - SportSync</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SportSync</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for players, teams, or matches...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="find-matches.html">Find Matches</a></li>
+                <li><a href="coach-contact.html">Contact Coaches</a></li>
+                <li><a href="player-contact.html" class="active">Contact Players</a></li>
+                <li class="dropdown">
+                    <a href="#">Dashboards <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="coach-dashboard.html">Coach Dashboard</a>
+                        <a href="organizer-dashboard.html">Organizer Dashboard</a>
+                        <a href="player-dashboard.html">Player Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <div class="hero-content">
+                <h1>Find and Contact Players</h1>
+                <p>Connect with talented players across various sports disciplines</p>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-container">
+                <div class="advanced-search">
+                    <h2>Find Players</h2>
+                    <div class="search-form">
+                        <div class="search-row">
+                            <div class="search-group">
+                                <label for="player-name">Player Name</label>
+                                <input type="text" id="player-name" placeholder="Enter player name">
+                            </div>
+                            
+                            <div class="search-group">
+                                <label for="sport-type">Sport</label>
+                                <select id="sport-type">
+                                    <option value="">All Sports</option>
+                                    <option value="soccer">Soccer</option>
+                                    <option value="basketball">Basketball</option>
+                                    <option value="baseball">Baseball</option>
+                                    <option value="volleyball">Volleyball</option>
+                                    <option value="tennis">Tennis</option>
+                                    <option value="swimming">Swimming</option>
+                                    <option value="athletics">Athletics</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="search-row">
+                            <div class="search-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" placeholder="City, state, or country">
+                            </div>
+                            
+                            <div class="search-group">
+                                <label for="position">Position</label>
+                                <select id="position">
+                                    <option value="">Any Position</option>
+                                    <option value="forward">Forward</option>
+                                    <option value="midfielder">Midfielder</option>
+                                    <option value="defender">Defender</option>
+                                    <option value="goalkeeper">Goalkeeper</option>
+                                    <option value="guard">Guard</option>
+                                    <option value="center">Center</option>
+                                    <option value="pitcher">Pitcher</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="search-row">
+                            <div class="search-group">
+                                <label for="age-group">Age Group</label>
+                                <select id="age-group">
+                                    <option value="">Any Age Group</option>
+                                    <option value="u12">Under 12</option>
+                                    <option value="u15">Under 15</option>
+                                    <option value="u18">Under 18</option>
+                                    <option value="u21">Under 21</option>
+                                    <option value="senior">Senior (21+)</option>
+                                    <option value="veteran">Veteran (35+)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="search-group">
+                                <label for="skill-level">Skill Level</label>
+                                <select id="skill-level">
+                                    <option value="">Any Skill Level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="professional">Professional</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="search-actions">
+                            <button id="search-players" class="btn primary-btn">Search Players</button>
+                            <button id="reset-search" class="btn secondary-btn">Reset Filters</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>Search Results</h2>
+                    <div class="results-count">Showing <span id="results-count">15</span> players</div>
+                    <div class="sort-options">
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="relevance">Relevance</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                            <option value="age-high">Age (High to Low)</option>
+                            <option value="age-low">Age (Low to High)</option>
+                            <option value="rating-high">Rating (High to Low)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="coach-cards">
+                    <!-- Player Card 1 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-1.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Soccer</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">Michael Johnson</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> New York, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Forward</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.5 - 32 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Shooting</span>
+                                    <span class="specialty-tag">Dribbling</span>
+                                    <span class="specialty-tag">Speed</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">Experienced forward with excellent shooting skills and speed. Played professionally for 5 years with a strong record of scoring in competitive matches.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 2 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-2.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Basketball</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">Jessica Williams</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Chicago, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Guard</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(5.0 - 45 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">3-Point Shooting</span>
+                                    <span class="specialty-tag">Defense</span>
+                                    <span class="specialty-tag">Agility</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">Elite guard with exceptional shooting accuracy and defensive skills. NCAA Division I experience with multiple championship appearances.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 3 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-3.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Tennis</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">David Rodriguez</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Miami, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Singles</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.0 - 28 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Serve</span>
+                                    <span class="specialty-tag">Backhand</span>
+                                    <span class="specialty-tag">Endurance</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">Competitive tennis player with powerful serve and consistent backhand. Ranked in the top 100 nationally with multiple tournament wins.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 4 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-4.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Swimming</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">Emma Chen</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Los Angeles, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Freestyle</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(4.7 - 39 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Freestyle</span>
+                                    <span class="specialty-tag">Butterfly</span>
+                                    <span class="specialty-tag">Endurance</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">National champion swimmer specializing in freestyle and butterfly events. Multiple state records and Olympic trials qualifier with excellent technique.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 5 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-5.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Baseball</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">James Thompson</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Boston, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Pitcher</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.2 - 25 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Fastball</span>
+                                    <span class="specialty-tag">Curveball</span>
+                                    <span class="specialty-tag">Control</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">Talented pitcher with exceptional control and variety of pitches. College baseball experience with impressive strikeout record and ERA under 3.0.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Card 6 -->
+                    <div class="coach-card">
+                        <div class="coach-header">
+                            <img src="../images/player-6.jpg" alt="Player" class="coach-image">
+                            <span class="coach-sport">Volleyball</span>
+                        </div>
+                        <div class="coach-info">
+                            <h3 class="coach-name">Sophia Martinez</h3>
+                            <div class="coach-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> San Diego, USA</span>
+                                <span><i class="fas fa-user-tag"></i> Outside Hitter</span>
+                            </div>
+                            <div class="coach-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(4.1 - 22 reviews)</span>
+                            </div>
+                            <div class="coach-specialties">
+                                <h4>Skills:</h4>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">Spiking</span>
+                                    <span class="specialty-tag">Blocking</span>
+                                    <span class="specialty-tag">Serving</span>
+                                </div>
+                            </div>
+                            <p class="coach-description">Dynamic outside hitter with powerful spike and excellent defensive skills. Led college team to regional championships with consistent performance.</p>
+                            <div class="coach-actions">
+                                <a href="#" class="btn primary-btn">Contact</a>
+                                <a href="#" class="btn secondary-btn">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pagination">
+                    <a href="#" class="pagination-item disabled"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="pagination-item active">1</a>
+                    <a href="#" class="pagination-item">2</a>
+                    <a href="#" class="pagination-item">3</a>
+                    <a href="#" class="pagination-item">4</a>
+                    <a href="#" class="pagination-item">5</a>
+                    <a href="#" class="pagination-item"><i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>

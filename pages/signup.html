@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SportSync</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SportSync</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="find-matches.html">Find Matches</a></li>
+                <li><a href="coach-contact.html">Contact Coaches</a></li>
+                <li><a href="player-contact.html">Contact Players</a></li>
+                <li class="dropdown">
+                    <a href="#">Dashboards <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="coach-dashboard.html">Coach Dashboard</a>
+                        <a href="organizer-dashboard.html">Organizer Dashboard</a>
+                        <a href="player-dashboard.html">Player Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="signup-section">
+            <div class="signup-container">
+                <div class="signup-header">
+                    <h2>Create Your Account</h2>
+                    <p>Join SportSync and start managing your sports activities</p>
+                </div>
+                
+                <div class="signup-body">
+                    <form id="signup-form">
+                        <div class="form-steps">
+                            <div class="step active" data-step="1">Step 1</div>
+                            <div class="step" data-step="2">Step 2</div>
+                            <div class="step" data-step="3">Step 3</div>
+                            <div class="step" data-step="4">Step 4</div>
+                        </div>
+                        
+                        <!-- Step 1: Basic Information -->
+                        <div class="step-content active" id="step-1">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                                    <button type="button" class="password-toggle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-meter">
+                                        <div class="strength-bar"></div>
+                                    </div>
+                                    <span class="strength-text">Password strength</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="confirm-password" class="form-control" placeholder="Confirm your password" required>
+                                    <button type="button" class="password-toggle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="next-btn">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: User Type Selection -->
+                        <div class="step-content" id="step-2">
+                            <div class="form-group user-type-selection">
+                                <label>I am a:</label>
+                                <div class="user-type-cards">
+                                    <div class="user-type-card" data-type="coach">
+                                        <div class="card-icon">
+                                            <i class="fas fa-user-tie"></i>
+                                        </div>
+                                        <h3>Coach</h3>
+                                        <p>Manage teams, track player performance</p>
+                                        <input type="radio" name="user-type" value="coach" id="coach" checked>
+                                    </div>
+                                    <div class="user-type-card" data-type="player">
+                                        <div class="card-icon">
+                                            <i class="fas fa-running"></i>
+                                        </div>
+                                        <h3>Player</h3>
+                                        <p>Track your stats, find matches</p>
+                                        <input type="radio" name="user-type" value="player" id="player">
+                                    </div>
+                                    <div class="user-type-card" data-type="organizer">
+                                        <div class="card-icon">
+                                            <i class="fas fa-clipboard-list"></i>
+                                        </div>
+                                        <h3>Organizer</h3>
+                                        <p>Create events, manage tournaments</p>
+                                        <input type="radio" name="user-type" value="organizer" id="organizer">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="prev-btn">Previous Step</button>
+                                <button type="button" class="next-btn">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Sports Preferences -->
+                        <div class="step-content" id="step-3">
+                            <div class="form-group">
+                                <label>Select your preferred sports:</label>
+                                <div class="sports-preferences">
+                                    <div class="sports-grid">
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="soccer" name="sports" value="soccer" class="sport-checkbox">
+                                            <label for="soccer" class="sport-label">
+                                                <i class="fas fa-futbol"></i>
+                                                <span>Soccer</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="basketball" name="sports" value="basketball" class="sport-checkbox">
+                                            <label for="basketball" class="sport-label">
+                                                <i class="fas fa-basketball-ball"></i>
+                                                <span>Basketball</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="baseball" name="sports" value="baseball" class="sport-checkbox">
+                                            <label for="baseball" class="sport-label">
+                                                <i class="fas fa-baseball-ball"></i>
+                                                <span>Baseball</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="volleyball" name="sports" value="volleyball" class="sport-checkbox">
+                                            <label for="volleyball" class="sport-label">
+                                                <i class="fas fa-volleyball-ball"></i>
+                                                <span>Volleyball</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="tennis" name="sports" value="tennis" class="sport-checkbox">
+                                            <label for="tennis" class="sport-label">
+                                                <i class="fas fa-table-tennis"></i>
+                                                <span>Tennis</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="cricket" name="sports" value="cricket" class="sport-checkbox">
+                                            <label for="cricket" class="sport-label">
+                                                <i class="fas fa-cricket"></i>
+                                                <span>Cricket</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="football" name="sports" value="football" class="sport-checkbox">
+                                            <label for="football" class="sport-label">
+                                                <i class="fas fa-football-ball"></i>
+                                                <span>Football</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="kabaddi" name="sports" value="kabaddi" class="sport-checkbox">
+                                            <label for="kabaddi" class="sport-label">
+                                                <i class="fas fa-running"></i>
+                                                <span>Kabaddi</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="kho-kho" name="sports" value="kho-kho" class="sport-checkbox">
+                                            <label for="kho-kho" class="sport-label">
+                                                <i class="fas fa-users"></i>
+                                                <span>Kho Kho</span>
+                                            </label>
+                                        </div>
+                                        <div class="sport-option">
+                                            <input type="checkbox" id="other-sport" name="sports" value="other" class="sport-checkbox">
+                                            <label for="other-sport" class="sport-label">
+                                                <i class="fas fa-plus-circle"></i>
+                                                <span>Other</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="prev-btn">Previous Step</button>
+                                <button type="button" class="next-btn">Next Step</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Terms and Submission -->
+                        <div class="step-content" id="step-4">
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="terms" class="form-check-input" required>
+                                    <label for="terms" class="form-check-label terms-text">
+                                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="newsletter" class="form-check-input">
+                                    <label for="newsletter" class="form-check-label">
+                                        Subscribe to our newsletter for updates
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="prev-btn">Previous Step</button>
+                                <button type="submit" class="submit-btn">Create Account</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="login-divider">
+                        <span>Or sign up with</span>
+                    </div>
+                    
+                    <div class="oauth-buttons">
+                        <button type="button" class="oauth-btn google">
+                            <i class="fab fa-google"></i>
+                            <span>Sign up with Google</span>
+                        </button>
+
+                        <button type="button" class="oauth-btn apple">
+                            <i class="fab fa-apple"></i>
+                            <span>Sign up with Apple</span>
+                        </button>
+                    </div>
+                    
+                    <div class="login-link">
+                        Already have an account? <a href="login.html">Login here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>SportSync</h2>
+                <p>Connecting sports communities</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Platform</h3>
+                    <ul>
+                        <li><a href="#">How it works</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SportSync. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/signup.js"></script>
+</body>
+</html>

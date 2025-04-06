@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Matches - SportSync</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/find-matches.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SportSync</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for players, teams, or matches...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="find-matches.html" class="active">Find Matches</a></li>
+                <li><a href="coach-contact.html">Contact Coaches</a></li>
+                <li><a href="player-contact.html">Contact Players</a></li>
+                <li class="dropdown">
+                    <a href="#">Dashboards <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="coach-dashboard.html">Coach Dashboard</a>
+                        <a href="organizer-dashboard.html">Organizer Dashboard</a>
+                        <a href="player-dashboard.html">Player Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="map-hero">
+            <div class="hero-content">
+                <h1>Find Matches in Your City</h1>
+                <p>Discover upcoming matches, tournaments, and pickup games near you</p>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="map-container">
+                <div class="map-sidebar">
+                    <div class="map-search">
+                        <h2>Search Location</h2>
+                        <div class="search-input">
+                            <input type="text" id="location-search" placeholder="Enter city or address">
+                            <button id="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="map-filters">
+                        <h3>Filter Matches</h3>
+                        <div class="filter-group">
+                            <label for="sport-filter">Sport</label>
+                            <select id="sport-filter">
+                                <option value="all">All Sports</option>
+                                <option value="soccer">Soccer</option>
+                                <option value="basketball">Basketball</option>
+                                <option value="baseball">Baseball</option>
+                                <option value="volleyball">Volleyball</option>
+                                <option value="tennis">Tennis</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="date-filter">Date</label>
+                            <select id="date-filter">
+                                <option value="all">Any Date</option>
+                                <option value="today">Today</option>
+                                <option value="tomorrow">Tomorrow</option>
+                                <option value="week">This Week</option>
+                                <option value="weekend">This Weekend</option>
+                                <option value="month">This Month</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="level-filter">Skill Level</label>
+                            <select id="level-filter">
+                                <option value="all">All Levels</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="distance-filter">Distance</label>
+                            <select id="distance-filter">
+                                <option value="5">Within 5 miles</option>
+                                <option value="10" selected>Within 10 miles</option>
+                                <option value="25">Within 25 miles</option>
+                                <option value="50">Within 50 miles</option>
+                                <option value="100">Within 100 miles</option>
+                            </select>
+                        </div>
+                        
+                        <button id="apply-filters" class="btn primary-btn">Apply Filters</button>
+                        <button id="reset-filters" class="btn secondary-btn">Reset Filters</button>
+                    </div>
+                    
+                    <div class="match-results">
+                        <h3>Nearby Matches</h3>
+                        <div class="match-list">
+                            <div class="match-item" data-id="match1">
+                                <div class="match-sport soccer"><i class="fas fa-futbol"></i></div>
+                                <div class="match-info">
+                                    <h4>Downtown Soccer Match</h4>
+                                    <p><i class="fas fa-map-marker-alt"></i> Central Park Field 1</p>
+                                    <p><i class="fas fa-calendar"></i> Saturday, 3:00 PM</p>
+                                    <p><i class="fas fa-users"></i> 8 spots available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="match-item" data-id="match2">
+                                <div class="match-sport basketball"><i class="fas fa-basketball-ball"></i></div>
+                                <div class="match-info">
+                                    <h4>Midtown Basketball Tournament</h4>
+                                    <p><i class="fas fa-map-marker-alt"></i> Midtown Courts</p>
+                                    <p><i class="fas fa-calendar"></i> Sunday, 10:00 AM</p>
+                                    <p><i class="fas fa-users"></i> 4 spots available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="match-item" data-id="match3">
+                                <div class="match-sport baseball"><i class="fas fa-baseball-ball"></i></div>
+                                <div class="match-info">
+                                    <h4>Brooklyn Baseball Game</h4>
+                                    <p><i class="fas fa-map-marker-alt"></i> Prospect Park Field</p>
+                                    <p><i class="fas fa-calendar"></i> Saturday, 1:00 PM</p>
+                                    <p><i class="fas fa-users"></i> 3 spots available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="match-item" data-id="match4">
+                                <div class="match-sport volleyball"><i class="fas fa-volleyball-ball"></i></div>
+                                <div class="match-info">
+                                    <h4>Beach Volleyball Tournament</h4>
+                                    <p><i class="fas fa-map-marker-alt"></i> Coney Island Beach</p>
+                                    <p><i class="fas fa-calendar"></i> Sunday, 2:00 PM</p>
+                                    <p><i class="fas fa-users"></i> 6 spots available</p>
+                                </div>
+                            </div>
+                            
+                            <div class="match-item" data-id="match5">
+                                <div class="match-sport tennis"><i class="fas fa-table-tennis"></i></div>
+                                <div class="match-info">
+                                    <h4>Queens Tennis Match</h4>
+                                    <p><i class="fas fa-map-marker-alt"></i> Flushing Meadows Courts</p>
+                                    <p><i class="fas fa-calendar"></i> Friday, 5:00 PM</p>
+                                    <p><i class="fas fa-users"></i> 2 spots available</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-view">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="create-match-section">
+            <div class="create-match-container">
+                <div class="create-match-content">
+                    <h2>Can't Find a Match?</h2>
+                    <p>Create your own match and invite players to join. It's easy to set up a game in your neighborhood.</p>
+                    <a href="#" class="btn primary-btn">Create a Match</a>
+                </div>
+                <div class="create-match-image">
+                    <img src="../images/create-match.jpg" alt="Create a Match">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>SportSync</h2>
+                <p>Complete sports management solution</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Dashboards</h3>
+                    <ul>
+                        <li><a href="coach-dashboard.html">Coach Dashboard</a></li>
+                        <li><a href="organizer-dashboard.html">Organizer Dashboard</a></li>
+                        <li><a href="player-dashboard.html">Player Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Team Management</a></li>
+                        <li><a href="#">Injury Tracking</a></li>
+                        <li><a href="#">Sponsorship & Finance</a></li>
+                        <li><a href="#">Career Growth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="coach-contact.html">Contact Coaches</a></li>
+                        <li><a href="player-contact.html">Contact Players</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SportSync. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/find-matches.js"></script>
+    <script src="../js/find-matches-rest.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkI0YvJOd1pVEsEFnLSIdfiBNSMyxAWAU&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

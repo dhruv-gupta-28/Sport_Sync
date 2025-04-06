@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Dashboard - SportSync</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>SportSync</h2>
+                <span class="user-role">Coach</span>
+            </div>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <img src="../images/coach-avatar.jpg" alt="Coach Avatar">
+                </div>
+                <div class="user-info">
+                    <h3>John Smith</h3>
+                    <p>Head Coach</p>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard-overview">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#team-management">
+                            <i class="fas fa-users"></i>
+                            <span>Team Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#player-registration">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Player Registration</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#match-scores">
+                            <i class="fas fa-trophy"></i>
+                            <span>Match Scores</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#injury-tracking">
+                            <i class="fas fa-medkit"></i>
+                            <span>Injury Tracking</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sponsorship">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>Sponsorship & Finance</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <a href="../index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <div class="header-search">
+                    <input type="text" placeholder="Search for players, teams, or matches...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    
+                    <div class="header-profile">
+                        <img src="../images/coach-avatar.jpg" alt="Coach Avatar">
+                        <span>John Smith</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Dashboard Overview Section -->
+            <section id="dashboard-overview" class="content-section active">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                    <p>Welcome back, John! Here's an overview of your team's performance.</p>
+                </div>
+                
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Players</h3>
+                            <p class="stat-value">24</p>
+                            <p class="stat-change positive">+2 this month</p>

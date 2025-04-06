@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SportSync</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SportSync</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="find-matches.html">Find Matches</a></li>
+                <li><a href="coach-contact.html">Contact Coaches</a></li>
+                <li><a href="player-contact.html">Contact Players</a></li>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="login.html" class="login-btn active">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="login">Login</button>
+                        <button class="tab-btn" data-tab="register">Register</button>
+                    </div>
+                </div>
+                
+                <div class="login-body">
+                    <!-- Login Tab -->
+                    <div id="login-tab" class="tab-content">
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                                    <button type="button" class="password-toggle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="remember" class="form-check-input">
+                                    <label for="remember" class="form-check-label">Remember me</label>
+                                </div>
+                                <a href="#" class="forgot-password">Forgot password?</a>
+                            </div>
+                            <button type="submit" class="login-btn-primary">Login</button>
+                        </form>
+                        
+                        <div class="login-divider">
+                            <span>Or continue with</span>
+                        </div>
+                        
+                        <div class="oauth-buttons">
+                            <button type="button" class="oauth-btn google">
+                                <i class="fab fa-google"></i>
+                                <span>Continue with Google</span>
+                            </button>
+                            <button type="button" class="oauth-btn apple">
+                                <i class="fab fa-apple"></i>
+                                <span>Continue with Apple</span>
+                            </button>
+                        </div>
+    <script src="../js/auth.js"></script>
+                    </div>
+                    
+                    <!-- Register Tab -->
+                    <div id="register-tab" class="tab-content hidden">
+                        <form id="register-form">
+                            <div class="form-group">
+                                <label for="reg-name">Full Name</label>
+                                <input type="text" id="reg-name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Email</label>
+                                <input type="email" id="reg-email" class="form-control" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Password</label>
+                                <div class="password-input">
+                                    <input type="password" id="reg-password" class="form-control" placeholder="Create a password" required>
+                                    <button type="button" class="password-toggle">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group register-options">
+                                <label>I am a:</label>
+                                <div class="user-type-options">
+                                    <div class="form-check">
+                                        <input type="radio" id="coach" name="user-type" value="coach" class="form-check-input" checked>
+                                        <label for="coach" class="form-check-label">Coach</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" id="player" name="user-type" value="player" class="form-check-input">
+                                        <label for="player" class="form-check-label">Player</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" id="organizer" name="user-type" value="organizer" class="form-check-input">
+                                        <label for="organizer" class="form-check-label">Organizer</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input type="checkbox" id="terms" class="form-check-input" required>
+                                    <label for="terms" class="form-check-label terms-text">
+                                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="login-btn-primary">Create Account</button>
+                        </form>
+                        
+                        <div class="login-divider">
+                            <span>Or register with</span>
+                        </div>
+                        
+                        <div class="oauth-buttons">
+                            <button type="button" class="oauth-btn google">
+                                <i class="fab fa-google"></i>
+                                <span>Register with Google</span>
+                            </button>
+                            <button type="button" class="oauth-btn apple">
+                                <i class="fab fa-apple"></i>
+                                <span>Register with Apple</span>
+                            </button>

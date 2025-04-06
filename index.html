@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDT3fGkpsCehPpvWfRGl3bJG6uN-SX8-f0&libraries=places&callback=initMap" async defer></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>SportSync</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for players, teams, or matches...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="pages/find-matches.html">Find Matches</a></li>
+                <li><a href="pages/coach-contact.html">Contact Coaches</a></li>
+                <li><a href="pages/player-contact.html">Contact Players</a></li>
+                <li class="dropdown">
+                    <a href="#">Dashboards <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pages/coach-dashboard.html">Coach Dashboard</a>
+                        <a href="pages/organizer-dashboard.html">Organizer Dashboard</a>
+                        <a href="pages/player-dashboard.html">Player Dashboard</a>
+                    </div>
+                </li>
+                <li><a href="pages/login.html" class="login-btn">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Manage Your Sports Team With Confidence</h1>
+                <p>Complete sports management solution for coaches, organizers, and players</p>
+                <div class="hero-buttons">
+                    <a href="pages/login.html" class="btn primary-btn">Get Started</a>
+                    <a href="#features" class="btn secondary-btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Team Management</h3>
+                    <p>Register players, manage teams, and track performance all in one place</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Analytics</h3>
+                    <p>Track player stats and team performance with detailed analytics</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medkit"></i>
+                    <h3>Injury Tracking</h3>
+                    <p>AI-powered injury risk assessment and recovery tracking</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Sponsorship & Finance</h3>
+                    <p>Manage funding, sponsorships, and financial planning</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Match Finder</h3>
+                    <p>Find matches in your city with Google Maps integration</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Assistant</h3>
+                    <p>Get answers to your questions and personalized career guidance</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-preview">
+            <h2 class="section-title">Powerful Dashboards</h2>
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <img src="images/coach-dashboard-preview.jpeg" alt="Coach Dashboard Preview">
+                    <h3>Coach Dashboard</h3>
+                    <p>Register players, manage teams, enter match scores, and track player performance</p>
+                    <a href="pages/coach-dashboard.html" class="btn primary-btn">View Dashboard</a>
+                </div>
+                <div class="dashboard-card">
+                    <img src="images/organizer-dashboard-preview.jpeg" alt="Organizer Dashboard Preview">
+                    <h3>Organizer Dashboard</h3>
+                    <p>Enter and verify match statistics with automatic mismatch warnings</p>
+                    <a href="pages/organizer-dashboard.html" class="btn primary-btn">View Dashboard</a>
+                </div>
+                <div class="dashboard-card">
+                    <img src="images/player-dashboard-preview.jpeg" alt="Player Dashboard Preview">
+                    <h3>Player Dashboard</h3>
+                    <p>View personal statistics and find matches in your city</p>
+                    <a href="pages/player-dashboard.html" class="btn primary-btn">View Dashboard</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="ai-features">
+            <h2 class="section-title">AI-Powered Features</h2>
+            <div class="ai-feature-container">
+                <div class="ai-feature-content">
+                    <h3>Injury Risk Prediction</h3>
+                    <p>Our Gemini AI analyzes player data to predict injury risks with color-coded indicators:</p>
+                    <ul>
+                        <li><span class="risk-indicator green"></span> Low risk</li>
+                        <li><span class="risk-indicator yellow"></span> Moderate risk</li>
+                        <li><span class="risk-indicator red"></span> High risk</li>
+                    </ul>
+                    <p>Get real-time recovery updates and maintain a comprehensive injury log.</p>
+                </div>
+                <div class="ai-feature-image">
+                    <img src="images/injury-prediction.jpeg" alt="Injury Prediction Feature">
+                </div>
+            </div>
+            <div class="ai-feature-container reverse">
+                <div class="ai-feature-image">
+                    <img src="images/career-guidance.jpg" alt="Career Guidance Feature">
+                </div>
+                <div class="ai-feature-content">
+                    <h3>Career Growth Guidance</h3>
+                    <p>Gemini AI analyzes player performance and provides personalized career growth opportunities:</p>
+                    <ul>
+                        <li>Skill development recommendations</li>
+                        <li>Training program suggestions</li>
+                        <li>Career path projections</li>
+                    </ul>
+                    <p>Help players reach their full potential with AI-driven insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chatbot-preview">
+            <h2 class="section-title">AI Chatbot Assistant</h2>
+            <div class="chatbot-container">
+                <div class="chatbot-content">
+                    <h3>Get Instant Answers to Your Questions</h3>
+                    <p>Our AI chatbot can help with:</p>
+                    <ul>
+                        <li>Match details and schedules</li>
+                        <li>Player statistics and performance</li>
+                        <li>Career guidance and recommendations</li>
+                        <li>System navigation assistance</li>
+                    </ul>
+                    <p>Available 24/7 to provide support and information.</p>
+                </div>
+                <div class="chatbot-demo">
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <h4>SportSync Assistant</h4>
+                        </div>
+                        <div class="chat-messages">
+                            <div class="message bot">
+                                <p>Hello! How can I help you today?</p>
+                            </div>
+                            <div class="message user">
+                                <p>Can you show me my team's performance in the last match?</p>
+                            </div>
+                            <div class="message bot">
+                                <p>Your team won 3-1 against Eagles FC. Would you like to see detailed statistics?</p>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="Type your message...">
+                            <button><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>SportSync</h2>
+                <p>Complete sports management solution</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Dashboards</h3>
+                    <ul>
+                        <li><a href="pages/coach-dashboard.html">Coach Dashboard</a></li>
+                        <li><a href="pages/organizer-dashboard.html">Organizer Dashboard</a></li>
+                        <li><a href="pages/player-dashboard.html">Player Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Features</h3>
+                    <ul>
+                        <li><a href="#">Team Management</a></li>
+                        <li><a href="#">Injury Tracking</a></li>
+                        <li><a href="#">Sponsorship & Finance</a></li>
+                        <li><a href="#">Career Growth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="pages/coach-contact.html">Contact Coaches</a></li>
+                        <li><a href="pages/player-contact.html">Contact Players</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest updates</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SportSync. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/validation.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

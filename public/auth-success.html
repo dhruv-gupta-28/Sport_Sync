@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Success</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .success-icon {
+            color: #4CAF50;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .redirect-text {
+            color: #666;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1>Authentication Successful!</h1>
+        <p class="redirect-text">Please wait while we redirect you to your dashboard...</p>
+    </div>
+
+    <script>
+        // Get token and userType from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const userType = urlParams.get('userType');
+
+        if (token && userType) {
+            // Store token in localStorage
+            localStorage.setItem('token', token);
+            localStorage.setItem('userType', userType);
+
+            // Redirect based on user type
+            setTimeout(() => {
+                switch(userType) {
+                    case 'coach':
+                        window.location.href = '/pages/coach-dashboard.html';
+                        break;
+                    case 'player':
+                        window.location.href = '/pages/player-dashboard.html';
+                        break;
+                    case 'organizer':
+                        window.location.href = '/pages/organizer-dashboard.html';
+                        break;
+                    default:
+                        window.location.href = '/';
+                }
+            }, 2000);
+        } else {
+            // Handle error
+            document.querySelector('.success-container').innerHTML = `
+                <div style="color: #f44336;">⚠</div>
+                <h1>Authentication Error</h1>
+                <p>There was a problem with the authentication process.</p>
+                <a href="/pages/login.html" class="btn">Return to Login</a>
+            `;
+        }
+    </script>
+</body>
+</html>
